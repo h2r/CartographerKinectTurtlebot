@@ -111,6 +111,8 @@ Example:
 -------------------------------------
 Running rviz from your local machine:
 
+* Warning: Instruction will not work if the local and remote machines are not on the same network and if you have not properly set up the environment on you remote machine (Turtlebot2).
+
 1. Copy the rviz configuration to your local machines desktop
 
 2. Open a terminal and type the following command:
@@ -121,6 +123,8 @@ Running rviz from your local machine:
 
 -------------------------------------
 Running rqt_graph from your local machine:
+
+* Warning: Instruction will not work if the local and remote machines are not on the same network and if you have not properly set up the environment on you remote machine (Turtlebot2).
 
 1. Open a terminal and type in the following command:
 
