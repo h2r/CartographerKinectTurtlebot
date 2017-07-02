@@ -56,7 +56,7 @@ stuff "rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=fa
 
 # This screen session shall launch the freenect software to run the kinect
 screen -t " freenect"
-stuff "roslaunch freenect_launch freenect.launch^M"
+stuff "roslaunch freenect_launch freenect.launch"
 
 # This screen session shall launch the ar_tag node
 screen -t " AR_Tag"
