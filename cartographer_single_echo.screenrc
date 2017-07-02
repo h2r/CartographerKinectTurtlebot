@@ -1,5 +1,5 @@
 #
-# various settings suggested by other users
+# Brown University 2017: h2r Human to Robots Laboratory
 #
 # derived from the Paradox pair programming screenrc, UChicago 2010
 #   ~ yes, we are all total newbs ~
@@ -30,7 +30,7 @@ multiuser on
 
 #acladd gen
 acladd rbaker2
-acladd leonwu 
+acladd leon_ wu 
 
 # Starts a new screen with title " MAKE"
 # this is basically equivalent to pressing the following from within screen:
@@ -42,13 +42,7 @@ acladd leonwu
 "
 #stuff "screen
 "
-
 # This is just a note to myself: To kill all screen sessions, you must type in the command "killall screen"
-
-
-# This screen session shall be used for our git session.
-screen -t " git"
-stuff " Need to set up git repo"
 
 # This screen session was written to run the cartographer Single-echo configuration
 screen -t " cartographer"
@@ -69,32 +63,12 @@ screen -t " AR_Tag"
 stuff "source catkin_ws_ron/devel/setup.bash^M"
 stuff "roslaunch ar_track_alvar freenect_launch_pr2_indiv.launch"
 
-# This screen session shall be used to spawn a free ssh session into the Turtlebot
-screen -t " free ssh"
-stuff "source catkin_ws_leon/install_isolated/setup.bash"
-
 # This screen session shall be used to spawn a teleoperation session for the Turtlebot
 screen -t " teleop"
 stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
 stuff "roslaunch turtlebot_teleop keyboard_teleop.launch"
 
-#This screen session shall be used to start the AR_Recon software
-screen -t " Rons code"
+#This screen session shall be used to start the AR tag TF Listening and Broadcasting software
+screen -t " AR_L&B_TF"
 stuff "source catkin_ws_ron/devel/setup.bash^M"
-stuff "rosrun robot_setup_tf tf_listener"
-
-# Settings needed to get rviz working properly for testing code and working with code.
-# (You will should only care about these notes if the cartographer_single_echo_kinect_settings.rviz
-#  is not with the project.)
-# 
-# Things to make sure are up on the Displays Panel:
-#   (Incase the rviz configuration file is not present, you will have to manually setup rviz.)
-#   - Global Options: This should already be open once you
-#   - Global Status: Ok (If this is not okay, figure why it is not okay.
-#   - Grid: This should already be up when you open rviz.
-#   - PointCloud2: This should come when you start the kinect.
-#   - LaserScan: This may have to be added.
-#   - Map: This should already be open when you start rviz.
-#   - RobotModel: You will have to add this via the "Add" button on the bottom left hand corner.
-#
-# 
+stuff "rosrun robot_setup_tf tf_L_B_node"
