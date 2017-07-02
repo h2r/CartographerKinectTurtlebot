@@ -69,6 +69,7 @@ stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
 stuff "roslaunch turtlebot_teleop keyboard_teleop.launch"
 
 #This screen session shall be used to start the AR tag TF Listening and Broadcasting software
+# This node is not done yet, but should be up soon.
 screen -t " AR_L&B_TF"
 stuff "source catkin_ws_ron/devel/setup.bash^M"
 stuff "rosrun robot_setup_tf tf_L_B_node"
