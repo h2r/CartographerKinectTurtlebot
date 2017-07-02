@@ -4,7 +4,7 @@ This tutorial was created at Brown University's h2r Human to Robots Laboratory i
 
 <Put Description of the Purpose of the tutorial>
 
-# Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
+# Dependencies Required for Installation on Ubuntu 14.04 and newer distributions:
 
 ------------------------------------
 Turtlebot2 information link:
