@@ -1,6 +1,5 @@
 # Google Cartographer with xbox 360 Kinetic Augmented Reality Tag Tracking with Turtle Bot Tutorial:
 
-
 Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
 
 -------------------------------------
@@ -23,7 +22,7 @@ Ensure Installation was successful by running the following command:
     
 Additional documentation can be found at the following link:
 
-
+    http://wiki.ros.org/freenect_launch
 
 -------------------------------------
 AR tag tracking library Installation:
@@ -38,5 +37,8 @@ Example:
 Additional documentation can be found at the following link:
 
     http://wiki.ros.org/ar_track_alvar
+    
+-------------------------------------
+
 
 
