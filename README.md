@@ -109,15 +109,17 @@ Example:
 
     ssh -X h2r@xxx.xx.xx.xxx # IP Address
 
-On the remote machine (Turtlebot2), type in the following command:
+2. Once connect the remote machine (Turtlebot2), type in the following command:
 
-    rospack find ar_track_alvar
+        rospack find ar_track_alvar
 
-Change to the directory which has been outputed to the terminal.
+Change to the directory which has been outputed to the terminal. 
+
+*If the rospack is not found, you have not properly installed the ar_track_alvar library.
 
 Copy the freenect_launch_pr2_indiv.launch to the launch directory of the ar_track_alvar ros package.
 
-2. Once you are remotely connected to the Turtlebot2, navigate to the directory which contains the .screenrc file. If the screenrc file is not currently on the remote machine, copy the file .screenrc file to the directory of your choice.
+2. Navigate to the directory which contains the .screenrc file. If the screenrc file is not currently on the remote machine, copy the file .screenrc file to the directory of your choice.
 
 3. Run the following command to run the screen session script.
 
