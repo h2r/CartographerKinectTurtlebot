@@ -4,6 +4,9 @@ This tutorial was created at Brown University's h2r Human to Robots Laboratory i
 
 <Put Description of the Purpose of the tutorial>
 
+
+![Alt text](/home/ng/Desktop/img_sample.png?raw=true "Optional Title")
+
 # Stuff you need to install for Ubuntu 14.04 and newer distributions:
 
 ------------------------------------
