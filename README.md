@@ -92,3 +92,36 @@ Feel free to use the command below on your linux machine to gain a better unders
     man screen
 
 # Directions getting up and running once all dependencies are satisfied:
+-------------------------------------
+Running the rosnodes from your remote machine (Turtlebot2):
+
+1. ssh into the remote machine from your local machine.
+
+Additional information for ssh can be found at the following link:
+
+    https://www.freebsd.org/cgi/man.cgi?query=ssh&sektion=1
+    
+You can also find additional by using the following command:
+
+    man ssh
+    
+Example:
+
+
+-------------------------------------
+Running rviz from your local machine:
+
+1. Copy the rviz configuration to your local machines desktop
+
+2. Open a terminal and type the following command:
+
+    rosrun rviz rviz
+    
+ 3. Once rviz loads successfully, press ctrl-o and select the rviz configuration file from your desktop.
+
+-------------------------------------
+Running rqt_graph from your local machine:
+
+1. Open a terminal and type in the following command:
+
+    rosrun rqt_graph rqt_graph
