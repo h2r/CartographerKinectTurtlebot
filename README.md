@@ -49,6 +49,20 @@ Following directions at following link:
 AR tag TF Listening and Broadcasting Installation:
 
     <TO DO - Still working on minor software stuff>
+        
+-------------------------------------
+
+Rviv Information:
+
+Additional documentation can be found at the following link:
+
+    http://wiki.ros.org/rviz/UserGuide
+
+    http://docs.ros.org/indigo/api/rviz/html/user_guide/index.html
+
+
+    
+    
 
 
 
