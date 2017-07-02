@@ -3,6 +3,7 @@
 
 Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
 
+_
 Kinect Installation and Setup on ROS:
 
     sudo apt-get install libfreenect-dev
@@ -18,3 +19,16 @@ Example:
 Ensure Installation was successful by running the following command:
 
     roslaunch freenect_launch freenect.launch
+
+_
+AR tag tracking library Installation:
+
+    sudo apt-get install ros-<ROS-VERSION>-ar-track-alvar
+   
+Example:
+    
+    sudo apt-get install ros-indigo-ar-track-alvar
+    
+
+Further documentation can be found at the link below:
+
