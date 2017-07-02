@@ -2,10 +2,6 @@
 
 This tutorial was created at Brown University's h2r Human to Robots Laboratory in the summer of 2017.
 
-<Put Description of the Purpose of the tutorial>
-
-
-![Alt text]( CartographerKinectTurtlebot/image_sample.png?raw=true "Optional Title")
 
 # Stuff you need to install for Ubuntu 14.04 and newer distributions:
 
