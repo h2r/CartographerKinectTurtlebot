@@ -19,6 +19,11 @@ Example:
 Ensure Installation was successful by running the following command:
 
     roslaunch freenect_launch freenect.launch
+    
+    
+Additional documentation can be found at the following link:
+
+
 
 -------------------------------------
 AR tag tracking library Installation:
@@ -30,7 +35,7 @@ Example:
     sudo apt-get install ros-indigo-ar-track-alvar
     
 
-Further documentation can be found at the link below:
+Additional documentation can be found at the following link:
 
     http://wiki.ros.org/ar_track_alvar
 
