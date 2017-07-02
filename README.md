@@ -93,6 +93,11 @@ Feel free to use the command below on your linux machine to gain a better unders
 
 # Directions getting up and running once all dependencies are satisfied:
 -------------------------------------
+Coping file to the appropriate machines and directories:
+
+
+
+-------------------------------------
 Running the rosnodes from your remote machine (Turtlebot2):
 
 1. ssh into the remote machine from your local machine.
@@ -116,13 +121,19 @@ Example:
  Example:
  
         screen -c cartographer_single_echo.screenrc
+ 
+The screen session will source the appropriate bash files and load the command line with the necessary ros commands.
+    
+4. Navigate between the newly created screen sessions with the following command:
+
+        `-<SCREEN-SESSION-NUMBER>
         
-* Warning: If an issue occurs and you would like to kill all the screen sessions, type in the following command:
+Example: 
 
-        killall screen
-
-4. Navigate to the 
-
+    Navigating to the third screen session would look something like this:
+    
+        `-3
+        
 -------------------------------------
 Running rviz from your local machine:
 
