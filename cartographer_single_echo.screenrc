@@ -1,0 +1,100 @@
+#
+# various settings suggested by other users
+#
+# derived from the Paradox pair programming screenrc, UChicago 2010
+#   ~ yes, we are all total newbs ~
+#
+
+startup_message off
+
+#defscrollback 5000
+defscrollback 5000
+
+escape ``
+
+# this hard status was stolen from the net, all credit goes to its originator
+hardstatus             alwayslastline
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+# A hint for using multiuser mode:  make sure that both parties have identically
+# sized terminals, otherwise there could be graphical mismatches and undrawn text
+# for one party :(  .
+
+# turn multiuser mode on so others can connect.
+multiuser on
+
+# add the specified user to this screen session so that they can connect.
+# the initiating user is allowed automatically, but add both so either can
+# run this script without modification.
+
+#acladd gen
+acladd rbaker2
+acladd leonwu 
+
+# Starts a new screen with title " MAKE"
+# this is basically equivalent to pressing the following from within screen:
+# `c (starts a new window)
+# `:title " MAKE" (sets the title to " MAKE")
+#screen -t " MAKE"
+
+#stuff "unset STY
+"
+#stuff "screen
+"
+
+# This is just a note to myself: To kill all screen sessions, you must type in the command "killall screen"
+
+
+# This screen session shall be used for our git session.
+screen -t " git"
+stuff " Need to set up git repo"
+
+# This screen session was written to run the cartographer Single-echo configuration
+screen -t " cartographer"
+stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
+stuff "roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch"
+
+#  This screen session will 
+screen -t " cartographer"
+stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
+stuff "rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false"
+
+# This screen session shall launch the freenect software to run the kinect
+screen -t " freenect"
+stuff "roslaunch freenect_launch freenect.launch^M"
+
+# This screen session shall launch the ar_tag node
+screen -t " AR_Tag"
+stuff "source catkin_ws_ron/devel/setup.bash^M"
+stuff "roslaunch ar_track_alvar freenect_launch_pr2_indiv.launch"
+
+# This screen session shall be used to spawn a free ssh session into the Turtlebot
+screen -t " free ssh"
+stuff "source catkin_ws_leon/install_isolated/setup.bash"
+
+# This screen session shall be used to spawn a teleoperation session for the Turtlebot
+screen -t " teleop"
+stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
+stuff "roslaunch turtlebot_teleop keyboard_teleop.launch"
+
+#This screen session shall be used to start the AR_Recon software
+screen -t " Rons code"
+stuff "source catkin_ws_ron/devel/setup.bash^M"
+stuff "rosrun robot_setup_tf tf_listener"
+
+# Settings needed to get rviz working properly for testing code and working with code.
+# (You will should only care about these notes if the cartographer_single_echo_kinect_settings.rviz
+#  is not with the project.)
+# 
+# Things to make sure are up on the Displays Panel:
+#   (Incase the rviz configuration file is not present, you will have to manually setup rviz.)
+#   - Global Options: This should already be open once you
+#   - Global Status: Ok (If this is not okay, figure why it is not okay.
+#   - Grid: This should already be up when you open rviz.
+#   - PointCloud2: This should come when you start the kinect.
+#   - LaserScan: This may have to be added.
+#   - Map: This should already be open when you start rviz.
+#   - RobotModel: You will have to add this via the "Add" button on the bottom left hand corner.
+#
+# 
