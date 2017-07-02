@@ -1,5 +1,7 @@
 # Google Cartographer and LIDAR with xbox 360 Kinetic Augmented Reality Tag Tracking with TurtleBot2 Tutorial:
 
+This tutorial was created at Brown University's h2r Human to Robots Laboratory in the summer of 2017.
+
 Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
 
 ------------------------------------
