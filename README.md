@@ -46,6 +46,9 @@ Following directions at following link:
     http://wiki.ros.org/Robots/TurtleBot
     
 -------------------------------------
+AR tag TF Listening and Broadcasting Installation:
+
+    <TO DO - Still working on minor software stuff>
 
 
 
