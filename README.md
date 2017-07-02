@@ -1,4 +1,4 @@
-# Google Cartographer with xbox 360 Kinetic Augmented Reality Tag Tracking with Turtle Bot Tutorial:
+# Google Cartographer and LIDAR with xbox 360 Kinetic Augmented Reality Tag Tracking with Turtle Bot Tutorial:
 
 Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
 
