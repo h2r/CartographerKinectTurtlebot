@@ -130,7 +130,7 @@ The screen session will source the appropriate bash files and load the command l
         
 Example: 
 
-    Navigating to the third screen session would look something like this:
+Navigating to the third screen session would look something like this:
     
         `-3
         
@@ -146,6 +146,16 @@ Running rviz from your local machine:
         rosrun rviz rviz
     
  3. Once rviz loads successfully, press ctrl-o and select the rviz configuration file from your desktop.
+ 
+    If the configuration file is properly loaded, you should see the following on the rviz screen:
+    
+    *  Global Options 
+    *  Global Status
+    *  Grid
+    *  PointCloud2
+    *  LaserScan
+    *  Map
+    *  RobotModel
 
 -------------------------------------
 Running rqt_graph from your local machine:
