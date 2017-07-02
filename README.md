@@ -3,14 +3,14 @@
 Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
 
 ------------------------------------
-Turtlebot2 Information Link:
+Turtlebot2 information link:
 
 
     http://www.turtlebot.com/turtlebot2/
 
 
 -------------------------------------
-Kinect Installation and Setup on ROS:
+Kinect installation and setup on ROS:
 
     sudo apt-get install libfreenect-dev
 
@@ -22,7 +22,7 @@ Example:
 
     sudo apt-get install ros-indigo-freenect-launch
     
-Ensure Installation was successful by running the following command:
+Ensure installation was successful by running the following command:
 
     roslaunch freenect_launch freenect.launch
     
@@ -46,7 +46,7 @@ Additional documentation can be found at the following link:
     http://wiki.ros.org/ar_track_alvar
     
 -------------------------------------
-Teleoperation of Turtlebot Installation:
+Teleoperation of turtlebot installation:
 
 Following directions at following link: 
     
