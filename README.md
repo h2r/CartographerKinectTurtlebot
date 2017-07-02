@@ -39,6 +39,13 @@ Additional documentation can be found at the following link:
     http://wiki.ros.org/ar_track_alvar
     
 -------------------------------------
+Teleoperation of Turtlebot Installation:
+
+Following directions at following link: 
+    
+    http://wiki.ros.org/Robots/TurtleBot
+    
+-------------------------------------
 
 
 
