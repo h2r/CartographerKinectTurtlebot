@@ -107,6 +107,21 @@ You can also find additional by using the following command:
     
 Example:
 
+2. Once you are remotely connected to the Turtlebot2, navigate to the directory which contains the .screenrc file. If the screenrc file is not currently on the remote machine, copy the file .screenrc file to the directory of your choice.
+
+3. Run the following command to run the screen session script.
+
+        screen -c <SCREEN-SCRIPS>
+        
+ Example:
+ 
+        screen -c cartographer_single_echo.screenrc
+        
+* Warning: If an issue occurs and you would like to kill all the screen sessions, type in the following command:
+
+        killall screen
+
+4. Navigate to the 
 
 -------------------------------------
 Running rviz from your local machine:
@@ -117,7 +132,7 @@ Running rviz from your local machine:
 
 2. Open a terminal and type the following command:
 
-    rosrun rviz rviz
+        rosrun rviz rviz
     
  3. Once rviz loads successfully, press ctrl-o and select the rviz configuration file from your desktop.
 
@@ -128,4 +143,4 @@ Running rqt_graph from your local machine:
 
 1. Open a terminal and type in the following command:
 
-    rosrun rqt_graph rqt_graph
+        rosrun rqt_graph rqt_graph
