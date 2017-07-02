@@ -3,7 +3,7 @@
 
 Dependencies Required for Installation for Ubuntu 14.04 and newer distributions:
 
-_
+--------------------------------
 Kinect Installation and Setup on ROS:
 
     sudo apt-get install libfreenect-dev
