@@ -51,7 +51,6 @@ AR tag TF Listening and Broadcasting Installation:
     <TO DO - Still working on minor software stuff>
         
 -------------------------------------
-
 ros rviz Information:
 
 Additional documentation can be found at the following link:
@@ -61,14 +60,23 @@ Additional documentation can be found at the following link:
     http://docs.ros.org/indigo/api/rviz/html/user_guide/index.html   
     
 -------------------------------------
-
 ros rqt_graph Information:
     
 Additional documentation can be found at the following link:
 
     http://wiki.ros.org/rqt_graph
-   
+    
+    
+-------------------------------------
+Screen Session Installation:
 
+    sudo apt-get install screen
+    
+Additional documentation can found at the following link:
 
+    https://www.gnu.org/software/screen/manual/screen.html
+  
+Feel free to use the command below on your linux machine to gain a better understanding of how to use screen:
 
+    man screen
 
