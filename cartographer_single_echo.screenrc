@@ -47,29 +47,29 @@ acladd leon_ wu
 # This screen session was written to run the cartographer Single-echo configuration
 screen -t " cartographer"
 stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
-stuff "roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch"
+stuff "roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch^M"
 
-#  This screen session will 
+#  This screen session will make the LIDAR begin publishing its data.
 screen -t " cartographer"
 stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
-stuff "rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false"
+stuff "rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false^M"
 
 # This screen session shall launch the freenect software to run the kinect
 screen -t " freenect"
-stuff "roslaunch freenect_launch freenect.launch"
+stuff "roslaunch freenect_launch freenect.launch^M"
 
 # This screen session shall launch the ar_tag node
 screen -t " AR_Tag"
 stuff "source catkin_ws_ron/devel/setup.bash^M"
-stuff "roslaunch ar_track_alvar freenect_launch_pr2_indiv.launch"
+stuff "roslaunch ar_track_alvar freenect_launch_pr2_indiv.launch^M"
 
 # This screen session shall be used to spawn a teleoperation session for the Turtlebot
 screen -t " teleop"
 stuff "source catkin_ws_leon/install_isolated/setup.bash^M"
-stuff "roslaunch turtlebot_teleop keyboard_teleop.launch"
+stuff "roslaunch turtlebot_teleop keyboard_teleop.launch^M"
 
 #This screen session shall be used to start the AR tag TF Listening and Broadcasting software
 # This node is not done yet, but should be up soon.
 screen -t " AR_L&B_TF"
 stuff "source catkin_ws_ron/devel/setup.bash^M"
-stuff "rosrun robot_setup_tf tf_L_B_node"
+stuff "rosrun robot_setup_tf tf_L_B_node^M"
