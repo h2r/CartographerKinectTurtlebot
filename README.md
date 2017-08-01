@@ -108,7 +108,7 @@ Example:
 
 2. Once connect the remote machine (Turtlebot2), type in the following command:
 
-        rospack find ar_track_alvar
+    rospack find ar_track_alvar
 
 Change to the directory which has been outputed to the terminal. 
 
@@ -120,23 +120,23 @@ Copy the freenect_launch_pr2_indiv.launch to the launch directory of the ar_trac
 
 3. Run the following command to run the screen session script.
 
-        screen -c <SCREEN-SCRIPS>
+    screen -c <SCREEN-SCRIPS>
         
  Example:
  
-        screen -c cartographer_single_echo.screenrc
+    screen -c cartographer_single_echo.screenrc
  
 The screen session will source the appropriate bash files and load the command line with the necessary ros commands.
     
 4. Navigate between the newly created screen sessions with the following command:
 
-        `-<SCREEN-SESSION-NUMBER>
+    `<SCREEN-SESSION-NUMBER>
         
 Example: 
 
 Navigating to the third screen session would look something like this:
     
-        `-3
+    `3
         
 -------------------------------------
 Running rviz from your local machine:
