@@ -32,6 +32,8 @@ Additional documentation can be found at the following link:
 
     http://wiki.ros.org/freenect_launch
 
+Google Cartographer installation for Turtlebot: see [link](https://google-cartographer-ros-for-turtlebots.readthedocs.io/en/latest/)
+
 -------------------------------------
 AR tag tracking library Installation:
 
