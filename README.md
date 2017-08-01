@@ -28,11 +28,9 @@ Ensure installation was successful by running the following command:
     roslaunch freenect_launch freenect.launch
     
     
-Additional documentation can be found at the following link:
+Additional documentation can be found [here](http://wiki.ros.org/freenect_launch)
 
-    http://wiki.ros.org/freenect_launch
-
-Google Cartographer installation for Turtlebot: see [link](https://google-cartographer-ros-for-turtlebots.readthedocs.io/en/latest/)
+Google Cartographer installation for Turtlebot: see [here](https://google-cartographer-ros-for-turtlebots.readthedocs.io/en/latest/)
 
 -------------------------------------
 AR tag tracking library Installation:
