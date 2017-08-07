@@ -1,0 +1,69 @@
+MAPPING WITH CARTOGRAPHER AND LIDAR
+
+Less verbose form of notes are available down below.
+
+Two options: Use single-echo laser scan or multi-echo laser scan. Not quite sure what that means but you have to pick one. Note that single-echo publishes to the topic /scan and multi-echo publishes to the topic /echoes. There may be other differences as well but I haven't looked too deep into it; I haven't been affected by any of these unknown differences so far so I'll assume they don't exist or don't matter unless that assumption interferes with doing stuff.
+
+Single-echo:
+############
+cd
+source catkin_ws_leon/install_isolated/setup.bash
+roscd cartographer_turtlebot
+cd configuration_files
+# Now for the file turtlebot_urg_lidar_2d.lua, set use_laser_scan to true and use_multi_echo_laser_scan to false.
+# Return to the terminal.
+roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch
+# In a separate terminal:
+rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false
+# This will be the output. Don't worry about the error. That's fine.
+# [ INFO] [unix timestamp]: Connected to network device with intensity and ID: H1111009
+# [ INFO] [unix timestamp]: Streaming data.
+# [ WARN] [unix timestamp]: Could not grab single echo scan.
+# [ERROR] [unix timestamp]: Error count exceeded limit, reconnecting.
+# [ INFO] [unix timestamp]: Connected to network device with intensity and ID: H1111009
+# [ERROR] [unix timestamp]: Tried to advertise a service that is already advertised in this node [/urg_node/set_parameters]
+# [ INFO] [unix timestamp]: Streaming data.
+# As soon as the first terminal stops giving warn messages about "Queue waiting for data" and starts giving info messages, things are ready to go.
+
+Multi-echo NOTE THAT THIS DOESN'T SEEM TO WORK WITH THE ROSBAG -> YAML + PGM -> LOCALIZATION + NAVIGATION PROCESS, NEED SINGLE-ECHO AT LEAST FOR NOW:
+###########
+cd
+source catkin_ws_leon/install_isolated/setup.bash
+roscd cartographer_turtlebot
+cd configuration_files
+# Now for the file turtlebot_urg_lidar_2d.lua, set use_laser_scan to false and use_multi_echo_laser_scan to true.
+# Return to the terminal.
+roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch
+# In a separate terminal:
+rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=true
+# This should be the output.
+# [ INFO] [unix timestamp]: Connected to multiecho network device with intensity and ID: H1111009
+# [ INFO] [unix timestamp]: Streaming data.
+# If you get an output that looks like the output for single-echo (i.e. the info messages don't say "multiecho"), then stop (Ctrl + C) and try again. Usually this shouldn't happen but occasionally it came up while testing. 
+
+Now to visualize map, start up Rviz and do the same as with the camera method below.
+To save the map, use 
+rosrun map_server map_saver -f map_name
+which generates .yaml and .pgm files (no rosbag needed).
+
+Files:
+cartographer_lidar_121_stationary.png is a map taken from the lidar while the turtlebot was still.
+cartographer_lidar_121.png is a map of cit 121 created using as the turtlebot made a lap around the room. I left some wires around the LIDAR but it still came out alright, with Baxter's table.
+cartographer_lidar_121_annotated.png is exactly what it sounds like.
+run_one.txt, run_two.txt are the terminal outputs of two successful runs. 
+
+----------------------------------------------------------
+
+Tips for good cartographer results: 
+- Drive slowly
+- Drive in a straight line as much as possible
+- Objects moving quickly are not going to be reflected on map (e.g. person walking at normal speed)
+- Pause if desired to let robot perform full calculations (alternatively just save things as a bag and when done, play the bag at a reduced speed).
+
+Commands:
+
+cd
+source catkin_ws_leon/install_isolated/setup.bash
+roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch
+# In a separate terminal:
+rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false

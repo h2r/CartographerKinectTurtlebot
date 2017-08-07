@@ -1,0 +1,15 @@
+RECORDS OF CHANGES TO COMPUTER BELOW THIS LINE
+
+On the turtlebot computer, changed ~/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/turtlebot_urg_lidar_2d.lua, changing TRAJECTORY_BUILDER_2D.laser_max_range from 8. to 30. which means that we can take advantage of the full 30-meter range of the LIDAR as opposed to just the 8 meters we used to be limited to.
+
+On the laptop as well as the Turtlebot computer: added file localization_navigation_amcl.rviz to folder ~/.rviz. This can be used to do navigation with the results of Gmapping and can be loaded in Rviz by clicking File > Open Config at the top and selecting this file. These settings can come in handy when dealing with these Rviz settings over SSH, where we can't directly use the launch files that are on the Turtlebot computer but not on the laptop.
+
+On the laptop (the Asus gaming laptop, not the Turtlebot computer):
+Changed ~/.bashrc by adding the following line to the bottom:
+export ROS_MASTER_URI=http://great-atuin:11311
+This is for SSH; now, when the turtlebot has a roscore running, we can do things like rosrun rviz rviz and rostopic list, both in non-ssh terminals
+
+Changed $TURTLEBOT_3D_SENSOR permanently from "asus_xtion_pro" to "kinect" by editing ~/.bashrc
+This is important for making map with Kinect and Google Cartographer because cartographer_turtlebot turtlebot_depth_camera_2d.launch uses a 3d sensor bringup file, which in turn depends on $TURTLEBOT_3D_SENSOR and we have a kinect.
+
+Copied files from /home/h2r/catkin_ws_leon/install_isolated/share/cartographer/configuration_files to /home/h2r/catkin_ws_leon/install_isolated/share/cartographer/configuration_files to run demos (before it couldn't find the files and was running into errors).

@@ -1,0 +1,13 @@
+MAPPING WITH CARTOGRAPHER AND KINECT
+
+Commands:
+cd
+source catkin_ws_leon/install_isolated/setup.bash
+roslaunch cartographer_turtlebot turtlebot_depth_camera_2d.launch
+In a new terminal: rosrun rviz rviz
+
+In Rviz, on the left, click Add-> Map. Make the Map's topic /map. 
+
+Files:
+initial_success.png is a map taken by rotating the Turtlebot back and forth (roughly 150ish degrees around) 
+cartographer_kinect_121.png is a map of CIT 121 by having the turtlebot take a lap around the room

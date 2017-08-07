@@ -1,0 +1,21 @@
+197 + 95.5 inches traveled in total = 292.5 inches = 7.4295 meters (straight-line distance, assuming no drift.)
+ 
+cartesian distance between start and stop point from odom topic is 7.47
+ 
+So pretty clear that the odom position is in meters.
+ 
+orientation seems to be in radians-- need to check.
+no, it doesn't seem to be in radians.
+x and y are constant at 0
+z initialized as 0
+w initialized as 1
+z is in (-1, 1)
+w is in [0, 1]
+ 
+wherever the robot is initialized, that's the origin position in odom.
+From initial pose, x-axis is forwards and backwards
+w^2 + z^2 = 1.
+ 
+z is like in a circle-- start at 0; counterclockwise increases until it reaches 0.99999... and then if you keep going, you jump to -0.999.... and then it goes back to 0. turning clockwise goes 0 --> -0.1 --> -0.9999 until you've made the 180 degree turn and then jumps to 0.9999....
+ 
+TODO: determine which direction is +y and which is -y

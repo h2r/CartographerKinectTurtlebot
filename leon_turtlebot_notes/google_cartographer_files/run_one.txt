@@ -1,0 +1,174 @@
+h2r@great-atuin:~$ roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch
+... logging to /home/h2r/.ros/log/1d31d99c-4f8a-11e7-8fac-c03fd56bfe16/roslaunch-great-atuin-7840.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://great-atuin:40674/
+
+SUMMARY
+========
+
+PARAMETERS
+ * /app_manager/auto_rapp_installation: False
+ * /app_manager/auto_start_rapp: 
+ * /app_manager/capability_server_name: capability_server
+ * /app_manager/local_remote_controllers_only: False
+ * /app_manager/preferred: [{'rocon_apps/chi...
+ * /app_manager/rapp_package_blacklist: []
+ * /app_manager/rapp_package_whitelist: ['rocon_apps', 't...
+ * /app_manager/robot_icon: turtlebot_bringup...
+ * /app_manager/robot_name: turtlebot
+ * /app_manager/robot_type: turtlebot
+ * /app_manager/screen: True
+ * /app_manager/simulation: False
+ * /app_manager/use_gateway_uuids: False
+ * /bumper2pointcloud/pointcloud_radius: 0.24
+ * /capability_server/blacklist: ['std_capabilitie...
+ * /capability_server/defaults/kobuki_capabilities/KobukiBringup: kobuki_capabiliti...
+ * /capability_server/defaults/kobuki_capabilities/KobukiBumper: kobuki_capabiliti...
+ * /capability_server/defaults/kobuki_capabilities/KobukiCliffDetection: kobuki_capabiliti...
+ * /capability_server/defaults/kobuki_capabilities/KobukiLED1: kobuki_capabiliti...
+ * /capability_server/defaults/kobuki_capabilities/KobukiLED2: kobuki_capabiliti...
+ * /capability_server/defaults/kobuki_capabilities/KobukiLED: kobuki_capabiliti...
+ * /capability_server/defaults/kobuki_capabilities/KobukiWheelDropDetection: kobuki_capabiliti...
+ * /capability_server/defaults/std_capabilities/Diagnostics: turtlebot_capabil...
+ * /capability_server/defaults/std_capabilities/DifferentialMobileBase: kobuki_capabiliti...
+ * /capability_server/defaults/std_capabilities/LaserSensor: turtlebot_capabil...
+ * /capability_server/defaults/std_capabilities/RGBDSensor: turtlebot_capabil...
+ * /capability_server/defaults/std_capabilities/RobotStatePublisher: turtlebot_capabil...
+ * /capability_server/defaults/turtlebot_capabilities/TurtleBotBringup: turtlebot_capabil...
+ * /capability_server/nodelet_manager_name: capability_server...
+ * /capability_server/package_whitelist: ['kobuki_capabili...
+ * /cmd_vel_mux/yaml_cfg_file: /opt/ros/indigo/s...
+ * /description: Kick-ass ROS turtle
+ * /diagnostic_aggregator/analyzers/input_ports/contains: ['Digital Input',...
+ * /diagnostic_aggregator/analyzers/input_ports/path: Input Ports
+ * /diagnostic_aggregator/analyzers/input_ports/remove_prefix: mobile_base_nodel...
+ * /diagnostic_aggregator/analyzers/input_ports/timeout: 5.0
+ * /diagnostic_aggregator/analyzers/input_ports/type: diagnostic_aggreg...
+ * /diagnostic_aggregator/analyzers/kobuki/contains: ['Watchdog', 'Mot...
+ * /diagnostic_aggregator/analyzers/kobuki/path: Kobuki
+ * /diagnostic_aggregator/analyzers/kobuki/remove_prefix: mobile_base_nodel...
+ * /diagnostic_aggregator/analyzers/kobuki/timeout: 5.0
+ * /diagnostic_aggregator/analyzers/kobuki/type: diagnostic_aggreg...
+ * /diagnostic_aggregator/analyzers/power/contains: ['Battery', 'Lapt...
+ * /diagnostic_aggregator/analyzers/power/path: Power System
+ * /diagnostic_aggregator/analyzers/power/remove_prefix: mobile_base_nodel...
+ * /diagnostic_aggregator/analyzers/power/timeout: 5.0
+ * /diagnostic_aggregator/analyzers/power/type: diagnostic_aggreg...
+ * /diagnostic_aggregator/analyzers/sensors/contains: ['Cliff Sensor', ...
+ * /diagnostic_aggregator/analyzers/sensors/path: Sensors
+ * /diagnostic_aggregator/analyzers/sensors/remove_prefix: mobile_base_nodel...
+ * /diagnostic_aggregator/analyzers/sensors/timeout: 5.0
+ * /diagnostic_aggregator/analyzers/sensors/type: diagnostic_aggreg...
+ * /diagnostic_aggregator/base_path: 
+ * /diagnostic_aggregator/pub_rate: 1.0
+ * /icon: turtlebot_bringup...
+ * /interactions/interactions: ['turtlebot_bring...
+ * /interactions/pairing: True
+ * /interactions/rosbridge_address: localhost
+ * /interactions/rosbridge_port: 9090
+ * /interactions/webserver_address: webapp.robotconce...
+ * /mobile_base/base_frame: base_footprint
+ * /mobile_base/battery_capacity: 16.5
+ * /mobile_base/battery_dangerous: 13.2
+ * /mobile_base/battery_low: 14.0
+ * /mobile_base/cmd_vel_timeout: 0.6
+ * /mobile_base/device_port: /dev/kobuki
+ * /mobile_base/odom_frame: odom
+ * /mobile_base/publish_tf: True
+ * /mobile_base/use_imu_heading: True
+ * /mobile_base/wheel_left_joint_name: wheel_left_joint
+ * /mobile_base/wheel_right_joint_name: wheel_right_joint
+ * /name: turtlebot
+ * /robot/name: turtlebot
+ * /robot/type: turtlebot
+ * /robot_description: <?xml version="1....
+ * /robot_state_publisher/publish_frequency: 5.0
+ * /rosdistro: indigo
+ * /rosversion: 1.11.21
+ * /turtlebot_laptop_battery/acpi_path: /sys/class/power_...
+ * /urg_node/frame_id: plate_top_link
+ * /use_sim_time: False
+ * /zeroconf/zeroconf/services: [{'domain': 'loca...
+
+NODES
+  /zeroconf/
+    zeroconf (zeroconf_avahi/zeroconf)
+  /
+    app_manager (rocon_app_manager/rapp_manager.py)
+    bumper2pointcloud (nodelet/nodelet)
+    capability_server (capabilities/capability_server)
+    cartographer_node (cartographer_ros/cartographer_node)
+    cmd_vel_mux (nodelet/nodelet)
+    diagnostic_aggregator (diagnostic_aggregator/aggregator_node)
+    flat_world_imu_node (cartographer_turtlebot/cartographer_flat_world_imu_node)
+    interactions (rocon_interactions/interactions_manager.py)
+    master (rocon_master_info/master.py)
+    mobile_base (nodelet/nodelet)
+    mobile_base_nodelet_manager (nodelet/nodelet)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    turtlebot_laptop_battery (laptop_battery_monitor/laptop_battery.py)
+    urg_node (urg_node/urg_node)
+
+ROS_MASTER_URI=http://localhost:11311
+
+core service [/rosout] found
+process[urg_node-1]: started with pid [7861]
+process[robot_state_publisher-2]: started with pid [7862]
+process[diagnostic_aggregator-3]: started with pid [7863]
+process[mobile_base_nodelet_manager-4]: started with pid [7870]
+process[mobile_base-5]: started with pid [7873]
+process[bumper2pointcloud-6]: started with pid [7892]
+process[cmd_vel_mux-7]: started with pid [7902]
+process[turtlebot_laptop_battery-8]: started with pid [7927]
+process[capability_server-9]: started with pid [7937]
+process[app_manager-10]: started with pid [7941]
+process[master-11]: started with pid [7960]
+process[interactions-12]: started with pid [7965]
+process[zeroconf/zeroconf-13]: started with pid [7975]
+process[cartographer_node-14]: started with pid [7990]
+process[flat_world_imu_node-15]: started with pid [8006]
+[ INFO] [1497284094.879468113]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/turtlebot_urg_lidar_2d.lua' for 'turtlebot_urg_lidar_2d.lua'.
+[ INFO] [1497284094.880002428]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/map_builder.lua' for 'map_builder.lua'.
+[ INFO] [1497284094.880079744]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/map_builder.lua' for 'map_builder.lua'.
+[ INFO] [1497284094.880210409]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[ INFO] [1497284094.880274491]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[ INFO] [1497284094.880543507]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[ INFO] [1497284094.880618193]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[ INFO] [1497284094.880869620]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/sparse_pose_graph.lua' for 'sparse_pose_graph.lua'.
+[ INFO] [1497284094.880937947]: I0612 12:14:54.000000  7990 configuration_file_resolver.cc:40] Found '/home/h2r/catkin_ws_leon/install_isolated/share/cartographer_turtlebot/configuration_files/sparse_pose_graph.lua' for 'sparse_pose_graph.lua'.
+[WARN] [WallTime: 1497284095.056821] Battery : unable to check laptop battery info [/sys/class/power_supply/BAT0/charge_full_design || /sys/class/power_supply/BAT0/energy_full_design does not exist]
+[ INFO] [1497284095.278226675]: I0612 12:14:55.000000  7990 submaps.cc:177] Added submap 1
+[ INFO] [1497284095.278353133]: I0612 12:14:55.000000  7990 map_builder_bridge.cc:37] Added trajectory with ID '0'.
+[ INFO] [1497284095.888228175]: Zeroconf: service successfully established [turtlebot][_ros-master._tcp][11311]
+[turtlebot_laptop_battery-8] process has finished cleanly
+log file: /home/h2r/.ros/log/1d31d99c-4f8a-11e7-8fac-c03fd56bfe16/turtlebot_laptop_battery-8*.log
+[ERROR] [1497284098.063781297]: Error count exceeded limit, reconnecting.
+[ WARN] [1497284100.375654282]: W0612 12:15:00.000000  7990 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[ WARN] [1497284100.754951016]: W0612 12:15:00.000000  7990 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[ERROR] [1497284101.138625129]: Tried to advertise a service that is already advertised in this node [/urg_node/set_parameters]
+[ WARN] [1497284101.139081857]: W0612 12:15:01.000000  7990 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[ INFO] [1497284101.253442138]: I0612 12:15:01.000000  7990 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '636328809012310168'.
+[ INFO] [1497284101.259049611]: I0612 12:15:01.000000  7990 local_trajectory_builder.cc:267] ImuTracker not yet initialized.
+[ INFO] [1497284110.295775789]: I0612 12:15:10.000000  7990 collated_trajectory_builder.cc:79] imu rate: 107.27 Hz 9.32e-03 s +/- 2.25e-03 s (pulsed at 99.76% real time)
+[ INFO] [1497284110.295885063]: I0612 12:15:10.000000  7990 collated_trajectory_builder.cc:79] odom rate: 50.14 Hz 1.99e-02 s +/- 5.40e-04 s (pulsed at 100.13% real time)
+[ INFO] [1497284110.295974035]: I0612 12:15:10.000000  7990 collated_trajectory_builder.cc:79] scan rate: 40.00 Hz 2.50e-02 s +/- 1.36e-04 s (pulsed at 99.87% real time)
+[ INFO] [1497284113.776833280]: I0612 12:15:13.000000  7990 motion_filter.cc:42] Motion filter reduced the number of scans to 0.6%.
+[ INFO] [1497284125.308004745]: I0612 12:15:25.000000  7990 collated_trajectory_builder.cc:79] imu rate: 107.96 Hz 9.26e-03 s +/- 2.35e-03 s (pulsed at 99.81% real time)
+[ INFO] [1497284125.308105913]: I0612 12:15:25.000000  7990 collated_trajectory_builder.cc:79] odom rate: 50.13 Hz 1.99e-02 s +/- 5.40e-04 s (pulsed at 100.06% real time)
+[ INFO] [1497284125.308203466]: I0612 12:15:25.000000  7990 collated_trajectory_builder.cc:79] scan rate: 40.00 Hz 2.50e-02 s +/- 9.40e-05 s (pulsed at 99.92% real time)
+[ INFO] [1497284126.292161110]: I0612 12:15:26.000000  7990 motion_filter.cc:42] Motion filter reduced the number of scans to 0.5%.
+^[[3~^[[3~^[[3~^[[3~^[[3~^[[3~^[[3~^[[3~^[[3~[ INFO] [1497284138.788944546]: I0612 12:15:38.000000  7990 motion_filter.cc:42] Motion filter reduced the number of scans to 0.533333%.
+[ INFO] [1497284140.327792022]: I0612 12:15:40.000000  7990 collated_trajectory_builder.cc:79] imu rate: 107.87 Hz 9.27e-03 s +/- 2.34e-03 s (pulsed at 100.24% real time)
+[ INFO] [1497284140.327882091]: I0612 12:15:40.000000  7990 collated_trajectory_builder.cc:79] odom rate: 50.14 Hz 1.99e-02 s +/- 5.51e-04 s (pulsed at 99.99% real time)
+[ INFO] [1497284140.327949248]: I0612 12:15:40.000000  7990 collated_trajectory_builder.cc:79] scan rate: 40.00 Hz 2.50e-02 s +/- 1.02e-04 s (pulsed at 100.12% real time)
+[ INFO] [1497284151.272871030]: I0612 12:15:51.000000  7990 motion_filter.cc:42] Motion filter reduced the number of scans to 0.5%.
+[ INFO] [1497284155.351971047]: I0612 12:15:55.000000  7990 collated_trajectory_builder.cc:79] imu rate: 107.80 Hz 9.28e-03 s +/- 2.33e-03 s (pulsed at 100.13% real time)
+[ INFO] [1497284155.352132703]: I0612 12:15:55.000000  7990 collated_trajectory_builder.cc:79] odom rate: 50.14 Hz 1.99e-02 s +/- 6.56e-04 s (pulsed at 99.84% real time)
+[ INFO] [1497284155.352261184]: I0612 12:15:55.000000  7990 collated_trajectory_builder.cc:79] scan rate: 40.00 Hz 2.50e-02 s +/- 1.10e-04 s (pulsed at 100.07% real time)
+[ INFO] [1497284163.788300856]: I0612 12:16:03.000000  7990 motion_filter.cc:42] Motion filter reduced the number of scans to 0.52%.
+[ INFO] [1497284170.356379793]: I0612 12:16:10.000000  7990 collated_trajectory_builder.cc:79] imu rate: 107.87 Hz 9.27e-03 s +/- 2.34e-03 s (pulsed at 99.96% real time)
+[ INFO] [1497284170.356500155]: I0612 12:16:10.000000  7990 collated_trajectory_builder.cc:79] odom rate: 50.13 Hz 1.99e-02 s +/- 5.50e-04 s (pulsed at 100.17% real time)
+[ INFO] [1497284170.356584163]: I0612 12:16:10.000000  7990 collated_trajectory_builder.cc:79] scan rate: 40.00 Hz 2.50e-02 s +/- 9.38e-05 s (pulsed at 100.02% real time)

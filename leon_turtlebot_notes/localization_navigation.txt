@@ -1,0 +1,51 @@
+We are following this tutorial: http://wiki.ros.org/turtlebot_navigation/Tutorials/indigo/Autonomously%20navigate%20in%20a%20known%20map
+
+Before starting, make sure you have the yaml and pgm file-- the yaml with some metadata, the pgm a viewable image. Now make sure that the line in the yaml file (which starts with "image:") correctly refers to the pgm file (if you renamed it at some point, manually change the line to match the renamed pgm file). 
+
+Bring up the turtlebot:
+roslaunch turtlebot_bringup minimal.launch
+
+############################
+
+LAUNCHING AMCL
+Two options to launch the amcl demo:
+export TURTLEBOT_MAP_FILE=/full/path/to/file.yaml
+roslaunch turtlebot_navigation amcl_demo.launch
+or
+roslaunch turtlebot_navigation amcl_demo.launch map_file:=/full/path/to/file.yaml
+
+These will have the same effect. Note that it has to be the full path!
+
+############################
+
+VIEWING RESULTS
+Two options to launch rviz to best visualize the amcl in action:
+roslaunch turtlebot_rviz_launchers view_navigation.launch --screen
+or
+rosrun rviz rviz
+and go to File > Open Config, and choose localization_navigation_amcl.rviz in the folder ~/.rviz.
+
+############################
+
+LOCALIZATION
+Two options to perform localization-- manual or autonomous
+Either manually set the robot's location and which way it's facing, or have it autonomously determine it.
+To do the first:
+In Rviz, click the "2D Pose Estimate" button
+Click on the map where the TurtleBot approximately is and drag in the direction the TurtleBot is pointing.
+Teleop the turtlebot a bit so the mass of arrows thin out (indicating that the robot is more and more certain of where it is). Now Ctrl + C that terminal--the navigation doesn't move until teleoperation is turned off.
+or
+
+To do autonomous localization (source: http://answers.ros.org/question/253701/autonomous-localization-using-amcl/?answer=254250#post-id-254250):
+rosservice call /global_localization
+This will scatter the arrows all over the map, indicating guesses. The robot has very little information at first, but eventually as it gathers more, it will be able to to determine its location. Teleop it around so it can "see" more and get a more accurate location estimate. This will be indicated as the arrows begin to cluster together, indicating a greater level of certainty.
+Beware of local minima, and if a lot of the arrows start to cluster together but in the wrong location, then keep teleoping the robot for a bit to see if you can break out of it. If all the arrows are together so you have one small mass of green arrows but they're wrong in location and/or direction, then you can run this rosservice call to reset everything and try again. Generally it should be pretty good unless the environment has deviated significantly from the map, such as with some new objects that the camera sees that weren't there while the map was being constructed.
+KNOWN ISSUES: as the maps get bigger and bigger, the hypotheses tend to get worse. Not sure if we can increase number of initial "hypotheses" but if we can do that somehow, that would probably be very helpful.
+
+############################
+
+NAVIGATION
+Autonomous navigation (after localization):
+Click the "2D Nav Goal" button
+On the map, click the desired destination and drag in the direction the TurtleBot should be pointing at the end.
+Beware that the ground has to be approximately level. The camera is elevated so it won't see things on the ground, which could make for a bumpy ride if we ignore their existence.

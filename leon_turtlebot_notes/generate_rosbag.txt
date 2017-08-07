@@ -1,0 +1,38 @@
+GENERATING A ROSBAG
+###############################
+
+Following this tutorial:
+http://wiki.ros.org/slam_gmapping/Tutorials/MappingFromLoggedData#Making_your_own_bag
+
+Before starting, make sure to know which program you want to use (gmapping/cartographer single-echo vs. cartographer multi-echo) for offline mode. If you're not sure, follow the instructions for gmapping/cartogarpher single-echo
+
+##############################################################
+gmapping/cartographer single-echo
+roslaunch turtlebot_bringup minimal.launch
+rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false
+
+cartographer multi-echo
+roslaunch turtlebot_bringup minimal.launch
+rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=true
+##############################################################
+
+In a separate terminal run:
+rosrun tf static_transform_publisher 0.08 -0.05 0.17 0 0 0 camera_link laser 1
+which will ensure that the topics are published to the right frame.
+
+Then in a separate terminal run:
+rosbag record -O filename.bag /scan /tf
+which records the /scan and /tf topics into a bag. 
+
+TODO: determine if we need to save the /odom and /imu topics as well if we're using Google Cartographer. as far as we know, don't believe odom and imu to be important to running gmapping offline, but probably is for running cartographer offline (so check the config file!!)
+
+Make sure to save the bag to the laptop, NOT the turtlebot computer!! Bag files are big (generally on the order of gigabytes) and we don't want to mess around with SSH for transporting files that big.
+
+Now teleop the turtlebot around the room(s) to build up a map.
+
+When done, Ctrl + C terminal that's currently saving the rosbag files and the rosbag will automatically save to its current directory.
+
+###############################
+
+Files: 
+navigation.bag--test bag with just over 30 seconds worth of recorded /map and /imu topics. Turtlebot just moved around a bit as a proof of concept.

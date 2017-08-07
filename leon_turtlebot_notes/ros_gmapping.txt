@@ -1,0 +1,12 @@
+Following tutorial here: http://wiki.ros.org/turtlebot_navigation/Tutorials/Build%20a%20map%20with%20SLAM
+
+This runs the GMapping thing.
+roslaunch turtlebot_bringup minimal.launch
+roslaunch turtlebot_navigation gmapping_demo.launch
+roslaunch turtlebot_rviz_launchers view_navigation.launch
+
+Files:
+ros_gmapping_121.png made from using gmapping while moving around CIT 121.
+ros_gmapping_121_map_saver.pgm made from using gmapping while moving around CIT 121 except to save the map, I used rosrun map_server map_saver -f filename instead of saving the map in Rviz.
+ros_gmapping_121_map_saver.yaml has some metadata about the map.
+ros_amcl_121.png made from using the amcl thing while moving around CIT 121.
