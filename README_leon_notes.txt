@@ -5,6 +5,8 @@ Note that whenever I refer to a file in my notes about cartographer, it's a file
 File descriptions:
 ##################
 
+burlap_rosbridge: control turtlebot programmatically using BURLAP Rosbridge.
+
 cartographer_kinect_mapping: how to make a map using Google Cartographer and the Kinect camera.
 
 cartographer_lidar_mapping: how to make a map using Google Cartographer and the LIDAR.
