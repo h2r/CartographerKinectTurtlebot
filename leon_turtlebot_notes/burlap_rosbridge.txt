@@ -1,0 +1,17 @@
+BURLAP ROSBRIDGE
+
+############################################
+
+Follow instructions here to get BURLAP rosbridge: https://github.com/h2r/burlap_rosbridge
+
+Make sure that the IP of the turtlebot is chosen correctly for the uri. For example, if the turtlebot's IP is 127.0.0.1 (localhost), then the line below should be set as follows.
+
+String uri = "ws://localhost:9090";
+// or
+String uri = "ws://127.0.0.1:9090";
+
+In a terminal, run
+
+rosrun rosbridge_server rosbridge_websocket
+
+Then run the Java program and it should connect using websockets to port 9090. 
