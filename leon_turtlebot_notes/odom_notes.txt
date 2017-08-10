@@ -1,9 +1,11 @@
+For localization and navigation using the built-in amcl library (see localization_navigation.txt), all messages will be in map_frame.
+
 Localization topics:
-/initialpose, /amcl_pose-- both of these seem to have the same information. Message type is geometry_msgs/PoseWithCovarianceStamped. Set location by publishing to /amcl_pose topic. 
+/initialpose, /amcl_pose-- both of these seem to have the same information. Message type is geometry_msgs/PoseWithCovarianceStamped. Set location by publishing to /amcl_pose topic. Contains Pose info for current location.
 
 Navigation (goal) topics:
 /move_base/goal-- has all the information of the goal but in testing, ran into issues with rostopic echo etc. The latter should generally be fine.
-/move_base_simple/goal-- same info as /move_base/goal except this one doesn't track execution status of the goals, just the goals themselves. Message type is /geometry_msgs/PoseStamped.
+/move_base_simple/goal-- same info as /move_base/goal except this one doesn't track execution status of the goals, just the goals themselves. Message type is /geometry_msgs/PoseStamped. Contains Pose info for goal state.
 
 geometry_msgs/PoseStamped
 	std_msgs/Header header-- metadata. see below for more on this.
@@ -18,7 +20,7 @@ geometry_msgs/PoseWithCovarianceStamped
 std_msgs/Header
 	seq-- integer 1, 2, 3, ... etc. i.e. numbers the messages in order.
 	time stamp
-	string frame_id-- for localization and navigation using the built-in amcl library (see localization_navigation.txt), this will always be map frame.
+	string frame_id-- gives the name of the current frame.
 
 geometry_msgs/Pose:
 geometry_msgs/Point position
