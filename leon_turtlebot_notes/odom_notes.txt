@@ -1,8 +1,16 @@
 Localization topics:
 /initialpose, /amcl_pose-- both of these seem to have the same information. Message type is geometry_msgs/PoseWithCovarianceStamped. Set location by publishing to /amcl_pose topic. 
 
+Navigation (goal) topics:
+/move_base/goal-- has all the information of the goal but in testing, ran into issues with rostopic echo etc. The latter should generally be fine.
+/move_base_simple/goal-- same info as /move_base/goal except this one doesn't track execution status of the goals, just the goals themselves. Message type is /geometry_msgs/PoseStamped.
+
+geometry_msgs/PoseStamped
+	std_msgs/Header header-- metadata. see below for more on this.
+	geometry_msgs/Pose-- see below for more on this.
+
 geometry_msgs/PoseWithCovarianceStamped
-	std_msgs/Header-- see below for more on this.
+	std_msgs/Header header-- metadata. see below for more on this.
 	geometry_msgs/PoseWithCovariance
 		float64[36] covariance-- 6 x 6 covariance matrix
 		geometry_msgs Pose-- see below for more on this.
