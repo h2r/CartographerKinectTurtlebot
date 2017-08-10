@@ -1,21 +1,13 @@
-197 + 95.5 inches traveled in total = 292.5 inches = 7.4295 meters (straight-line distance, assuming no drift.)
- 
-cartesian distance between start and stop point from odom topic is 7.47
- 
-So pretty clear that the odom position is in meters.
- 
-orientation seems to be in radians-- need to check.
-no, it doesn't seem to be in radians.
-x and y are constant at 0
-z initialized as 0
-w initialized as 1
-z is in (-1, 1)
-w is in [0, 1]
- 
-wherever the robot is initialized, that's the origin position in odom.
-From initial pose, x-axis is forwards and backwards
-w^2 + z^2 = 1.
- 
-z is like in a circle-- start at 0; counterclockwise increases until it reaches 0.99999... and then if you keep going, you jump to -0.999.... and then it goes back to 0. turning clockwise goes 0 --> -0.1 --> -0.9999 until you've made the 180 degree turn and then jumps to 0.9999....
- 
-TODO: determine which direction is +y and which is -y
+geometry_msgs/Pose:
+geometry_msgs/Point position
+	x, y, z: Coordinates. Units are in meters
+geometry_msgs/Quaternion orientation
+	x, y, z, w
+Details: 
+	When running the amcl_demo (see localization_navigation.txt), robot believes it is at origin of map frame (which is where robot started when map-making process began) with orientation quaternion = (0, 0, 0, 1).
+	When turning counterclockwise, z will increase from 0 (initial orientation) to 1 (turned 180 degrees). If Turtlebot continues to turn past 180 degrees, z will jump from 1 to -1 at 180 degrees and then return to 0 as it returns to its original orientation. The w-value of the quaternion will change as z changes as well-- see Invariants section below.
+	+x direction is, when at starting point (at origin and orientation quaternion = (0, 0, 0, 1)), is forward.
+Invariants:
+	Position z-coordinate is always 0 (since Turtlebot moves in the plane)
+	Quaternion x, y are always 0
+	Quaternion w^2 + z^2 = 1, where w is nonnegative.
