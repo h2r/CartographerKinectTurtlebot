@@ -7,6 +7,8 @@ Navigation (goal) topics:
 /move_base/goal-- has all the information of the goal but in testing, ran into issues with rostopic echo etc. The latter should generally be fine.
 /move_base_simple/goal-- same info as /move_base/goal except this one doesn't track execution status of the goals, just the goals themselves. Message type is /geometry_msgs/PoseStamped. Contains Pose info for goal state.
 
+For more info: http://wiki.ros.org/move_base#Action_API
+
 geometry_msgs/PoseStamped
 	std_msgs/Header header-- metadata. see below for more on this.
 	geometry_msgs/Pose-- see below for more on this.
