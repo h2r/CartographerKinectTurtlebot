@@ -17,7 +17,7 @@ generate_rosbag.txt: how to make a rosbag with the scan data.
 
 localization_navigation: localization (either autonomous or manual) and navigation (automatic) using Rviz.
 
-odom_notes: assorted notes when examining the /odom topic (using for localization and stuff programatically)
+topic_info_localization_navigation: assorted notes when examining the /odom topic (using for localization and stuff programatically)
 
 offline_mapping: how to use the rosbag to go to localization and navigation.
 
