@@ -1,3 +1,17 @@
+Localization topics:
+/initialpose, /amcl_pose-- both of these seem to have the same information. Message type is geometry_msgs/PoseWithCovarianceStamped. Set location by publishing to /amcl_pose topic. 
+
+geometry_msgs/PoseWithCovarianceStamped
+	std_msgs/Header-- see below for more on this.
+	geometry_msgs/PoseWithCovariance
+		float64[36] covariance-- 6 x 6 covariance matrix
+		geometry_msgs Pose-- see below for more on this.
+
+std_msgs/Header
+	seq-- integer 1, 2, 3, ... etc. i.e. numbers the messages in order.
+	time stamp
+	string frame_id-- for localization and navigation using the built-in amcl library (see localization_navigation.txt), this will always be map frame.
+
 geometry_msgs/Pose:
 geometry_msgs/Point position
 	x, y, z: Coordinates. Units are in meters
