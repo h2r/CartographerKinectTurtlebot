@@ -21,6 +21,7 @@ roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch
 You'll note that the commands for building a map are basically the same as the commands for online--the only difference is that we're using a rosbag instead of live data.
 
 Regardless of whether or not you're using GMapping or Cartographer, in a separate terminal run:
+#there is a -r option to the rosbag play that slows down the rate at which a rosbag is played at, which is useful to play the rosbag slower like 0.5 to create "better" maps
 rosparam set use_sim_time true # note: this might not be totally necessary because we did this in another terminal but I'm keeping it here in case it does
 rosbag play --clock <BAG_FILENAME>
 

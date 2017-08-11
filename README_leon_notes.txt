@@ -1,3 +1,5 @@
+ssh -XY turtlebot@138.16.161.202
+
 All files listed in the section "File descriptions" are in the folder ~/Desktop/leon_turtlebot_notes.
 
 Note that whenever I refer to a file in my notes about cartographer, it's a file in the folder ~/Desktop/leon_turtlebot_notes/google_cartographer_files and if it's using Gmapping, it's in the folder labeled so.

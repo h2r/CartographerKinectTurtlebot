@@ -12,6 +12,7 @@ roscd cartographer_turtlebot
 cd configuration_files
 # Now for the file turtlebot_urg_lidar_2d.lua, set use_laser_scan to true and use_multi_echo_laser_scan to false.
 # Return to the terminal.
+# If the turtlebot has been brought up the following command will bring it up again hence throwing errors all over the place. Stop the previously run bringup and just use the following file for bringup and mapping. 
 roslaunch cartographer_turtlebot turtlebot_urg_lidar_2d.launch
 # In a separate terminal:
 rosrun urg_node urg_node _ip_address:=192.168.0.10 _publish_multiecho:=false
